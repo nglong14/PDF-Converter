@@ -54,7 +54,7 @@ def convert_image_pdf(pdf_file, output_folder):
         print(f"Error converting {pdf_file}: {e}")
         return False
     
-def smart_convert_pdf(pdf_file, output_folder):
+def smart_convert_pdf(pdf_file, output_folder="output"):
     os.makedirs(output_folder, exist_ok=True)
     
     pdf_type = detect_type(pdf_file)
