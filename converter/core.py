@@ -5,6 +5,7 @@ import easyocr
 from markitdown import MarkItDown
 from .preprocess import image_preprocess
 from .utils import detect_type
+from refiner.clean import clean_text
 
 poppler_path = r'D:\Release-25.07.0-0\poppler-25.07.0\Library\bin'
 
@@ -38,6 +39,7 @@ def convert_image_pdf(pdf_file, output_folder):
             page = np.array(page)
             text = reader.readtext(page, detail = 0)
             text = '\n'.join(text)
+            text = clean_text(text)
 
             if text.strip():
                 all_text += f'## {i+1}\n\n{text}\n\n'
