@@ -4,3 +4,6 @@ markitdown
 pdf2image
 pillow
 numpy
+torch
+transformers
+sentencepiece
